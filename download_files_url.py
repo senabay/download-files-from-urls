@@ -3,7 +3,7 @@ import wget
 from pathlib import Path
 import pandas as pd
 
-def read_excel_file(path_for_excel):
+def read_excel_file(path_for_excel:str) -> list:
     
     excel_file_in =  pd.read_excel(path_for_excel)
     print(list(excel_file_in.columns).index('Downloadable Link'))
@@ -13,7 +13,7 @@ def read_excel_file(path_for_excel):
     download_links_list = list(download_links_list)
     print(download_links_list)
     return download_links_list
-def downnload_files_list(download_links_list): 
+def downnload_files_list(download_links_list:list) -> list: 
     downloaded_without_problem = []
     for temp_url in download_links_list:
         
